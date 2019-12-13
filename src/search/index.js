@@ -8,11 +8,14 @@ import logo from '../images/logo.png'
 import '../../commons/index'
 
 import {a} from './tree-shaking'
-
+if (false) {
+    b()
+}
 class Search extends React.Component{
 
     render() {
-        return <div >Search text no webpack, hot replacement
+        const functionA = a();
+        return <div > { functionA }Search text no webpack, hot replacement
         <img src={logo}/>
         </div>
     }

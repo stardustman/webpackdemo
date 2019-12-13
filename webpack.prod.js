@@ -198,12 +198,15 @@ module.exports = {
         //   })
     ].concat(htmlWebpackPlugins),
     optimization: {
+   
         splitChunks: {
+            minSize: 0,
             cacheGroups: {
                 commons: {
-                    test: /(react|react-dom)/,
-                    name: 'vendors',
-                    chunks: 'all'
+                    //test: /(react|react-dom)/,
+                    name: 'commons',
+                    chunks: 'all',
+                    minChunks: 2
               }
           }
       }  

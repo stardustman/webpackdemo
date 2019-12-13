@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 import './search.less'
 import logo from '../images/logo.png'
 
+import '../../commons/index'
 
 class Search extends React.Component{
 

@@ -200,13 +200,13 @@ module.exports = {
     optimization: {
    
         splitChunks: {
-            minSize: 0,
+            minSize: 0, // 要提取的文件大小
             cacheGroups: {
                 commons: {
                     //test: /(react|react-dom)/,
                     name: 'commons',
                     chunks: 'all',
-                    minChunks: 2
+                    minChunks: 3
               }
           }
       }  

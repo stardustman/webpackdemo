@@ -1,5 +1,6 @@
 'use strict'
 
+const webpack = require('webpack')
 const glob = require('glob')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -181,6 +182,7 @@ module.exports = {
         // }),
 
         new CleanWebpackPlugin(),
+        new webpack.optimize.ModuleConcatenationPlugin(),
 
         // new HtmlWebpackExternalsPlugin({
         //     externals: [

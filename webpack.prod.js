@@ -9,6 +9,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // 自动清理 dist
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+
 
 const setMPA = () => {
     const entry = {}
@@ -31,7 +33,7 @@ const setMPA = () => {
                
                 template: path.join(__dirname, `src/${pageName}/index.html`),
                 filename: `${pageName}.html`,
-                chunks: [ pageName],
+                chunks: [ 'vendors', pageName],
                 inject: true,
                 minify: {
                     html5: true,
@@ -70,9 +72,9 @@ module.exports = {
         filename: '[name]_[chunkhash:8].js'
        
     }, 
-    //mode: 'production',
+    mode: 'production',
     //mode: 'development',
-    mode: 'none',
+    //mode: 'none',
     module: {
         rules: [
             {
@@ -178,7 +180,33 @@ module.exports = {
         //     }
         // }),
 
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+
+        // new HtmlWebpackExternalsPlugin({
+        //     externals: [
+        //        {
+        //         module: 'react',
+        //         entry: 'http://11.url.cn/now/lib/16.2.0/react.min.js',
+        //         global: 'React'
+        //         },
+        //         {
+        //             module: 'react-dom',
+        //             entry: 'http://11.url.cn/now/lib/16.2.0/react-dom.min.js',
+        //             global: 'ReactDOM'
+        //           },
+        //     ],
+        //   })
     ].concat(htmlWebpackPlugins),
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /(react|react-dom)/,
+                    name: 'vendors',
+                    chunks: 'all'
+              }
+          }
+      }  
+    },
     devtool: 'inline-source-map'
 }

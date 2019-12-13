@@ -7,6 +7,8 @@ import logo from '../images/logo.png'
 
 import '../../commons/index'
 
+import {a} from './tree-shaking'
+
 class Search extends React.Component{
 
     render() {

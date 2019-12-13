@@ -72,9 +72,9 @@ module.exports = {
         filename: '[name]_[chunkhash:8].js'
        
     }, 
-    mode: 'production',
+    //mode: 'production', //默认开启 tree-shaking
     //mode: 'development',
-    //mode: 'none',
+    mode: 'none',
     module: {
         rules: [
             {

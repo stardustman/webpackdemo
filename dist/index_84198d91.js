@@ -89,14 +89,22 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helloworld__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);\n\ndocument.write(Object(_helloworld__WEBPACK_IMPORTED_MODULE_0__[\"helloworld\"])());\n\n//# sourceURL=webpack:///./src/index/index.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _helloworld__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+document.write(Object(_helloworld__WEBPACK_IMPORTED_MODULE_0__["helloworld"])());
 
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"helloworld\", function() { return helloworld; });\nfunction helloworld() {\n  return 'hello world';\n}\n\n//# sourceURL=webpack:///./src/index/helloworld.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "helloworld", function() { return helloworld; });
+function helloworld() {
+  return 'hello world';
+}
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=index_84198d91.js.map

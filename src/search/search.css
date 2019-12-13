@@ -1,0 +1,13 @@
+/**
+@font-face{
+    font-family: 'SourceHanSerif-Bold.ttc';
+    src: url(./images/SourceHanSerif-Bold.ttc);
+}
+**/
+
+
+.search-text{
+    font-size: 20px;
+    color: #f00;
+    font-family: 'SourceHanSerif-Bold.ttc';
+}

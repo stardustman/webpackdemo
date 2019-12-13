@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- EJS 语法 内联 meta.html 这个文件-->
+    ${ require('raw-loader!./meta.html') }
+    <title>Document</title>
+    <!-- JS 内联-->
+    <script>${ require('raw-loader!babel-loader!../../node_modules/lib-flexible/flexible.js') }</script>
+</head>
+<body>
+    
+</body>
+<script src="index.js"></script>
+</html>

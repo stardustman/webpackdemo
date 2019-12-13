@@ -70,8 +70,9 @@ module.exports = {
         filename: '[name]_[chunkhash:8].js'
        
     }, 
-    mode: 'production',
+    //mode: 'production',
     //mode: 'development',
+    mode: 'none',
     module: {
         rules: [
             {
@@ -179,4 +180,5 @@ module.exports = {
 
         new CleanWebpackPlugin()
     ].concat(htmlWebpackPlugins),
+    devtool: 'eval'
 }

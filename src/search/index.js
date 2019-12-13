@@ -13,10 +13,31 @@ if (false) {
 }
 class Search extends React.Component{
 
+    constructor() {
+        super(...arguments)
+        this.state = {
+            Text: null
+        } 
+    }
+
+    // 懒加载
+    loadComponent() {
+        import('./text.js').then((Text)=> {
+            this.setState({
+                Text: Text.default
+            })
+        });
+    }
+
     render() {
         const functionA = a();
-        return <div > { functionA }Search text no webpack, hot replacement
-        <img src={logo}/>
+        const {Text} = this.state
+        return <div >
+            {
+                Text ? <Text/> : null
+            }
+            {functionA} Search text no webpack, hot replacement
+        <img src={logo} onClick={this.loadComponent.bind(this)}/>
         </div>
     }
 }

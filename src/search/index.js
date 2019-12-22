@@ -6,6 +6,7 @@ import './search.less'
 import logo from '../images/logo.png'
 
 
+
 class Search extends React.Component{
 
     render() {

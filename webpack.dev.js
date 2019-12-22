@@ -58,7 +58,18 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(),
-        new FriendlyErrorsWebpackPlugin()
+        new FriendlyErrorsWebpackPlugin(),
+        function () {
+            this.hooks.done.tap('done', (stat) => {
+                if (stats.compilation.errors &&
+                    stats.compilation.errors.length &&
+                    process.argv.indexOf('--watch') == -1
+                ) {
+                    console.log('build error');
+                    process.exit(1);
+                    }
+            })
+        }
     ],
     devServer: {
         contentBase: './dist',

@@ -128,7 +128,9 @@ module.exports = {
                 use: [{
                     loader: 'file-loader', // base64
                     options: {
-                        name: '[name]_[hash:8].[ext]'
+                        name: '[name]_[hash:8].[ext]',
+                        // https://blog.csdn.net/simper_boy/article/details/103455444
+                        esModule: false // 启用 CommonJS 语法
                     }
                 }]
             },
@@ -138,6 +140,7 @@ module.exports = {
                     loader: 'file-loader', // base64
                     options: {
                         name: '[name]_[hash:8][ext]'
+
                     }
                 }]
             }

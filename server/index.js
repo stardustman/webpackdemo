@@ -36,7 +36,7 @@ const renderMarkup = (str)=>{
         <title>Document</title>
     </head>
     <body>
-        <div id="root">${str}</div>
+        ${str}
     </body>
     </html>
     `;

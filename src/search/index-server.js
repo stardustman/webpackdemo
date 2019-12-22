@@ -15,9 +15,13 @@ const logo = require('../images/logo.png')
 class Search extends React.Component{
 
     render() {
-        return <div >Search text no webpack, hot replacement
-        <img src={logo}/>
-        </div>
+        return (
+            < div > Search text no webpack, hot replacement
+            <img src={require('../images/logo.png')} alt="图片加载失败"></img>
+        
+           </div>
+        )
+           
     }
 }
 

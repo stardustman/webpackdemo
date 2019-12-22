@@ -9,6 +9,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // 自动清理 dist
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+
 
 const setMPA = () => {
     const entry = {}
@@ -147,6 +149,7 @@ module.exports = {
             cssProcessor: require('cssnano')
         }),
         
+        
         // html 文件压缩
         // new HtmlWebpackPlugin({
         //     template: path.join(__dirname, 'src/search/index.html'),
@@ -177,6 +180,9 @@ module.exports = {
         //     }
         // }),
 
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new FriendlyErrorsWebpackPlugin()
     ].concat(htmlWebpackPlugins),
+
+    stats: 'errors-only'
 }

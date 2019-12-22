@@ -2,7 +2,8 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 module.exports = {
     // entry: './src/index.js', // 单一 entry
     entry: {
@@ -56,10 +57,12 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new FriendlyErrorsWebpackPlugin()
     ],
     devServer: {
         contentBase: './dist',
-        hot: true
+        hot: true,
+        stats: 'errors-only'
     }
 }
